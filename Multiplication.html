@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Multiplication</title>
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+<body>
+<h1 id="multiplication">Multiplication :<img src="images/multiply.jpg" alt="Multiplication"></h1>
+<a href="index.html" class ="back"> Back to Maths Practice Home </a><br/>
+<div><img src="images/bunny1.jpg" class="cartoonImg"></div>
+<label>Enter the number of <strong>Sums</strong> you want</label>
+<input type="text" name="number" id="numberOfSums" value="5" max="20" size="3"><br/>
+<label>Enter the <strong>Max</strong> number you want to practice for</label>
+<input type="text" name="number" id="maxNumber" value="12" max="99" size="3">
+<button id="loadButton" onclick="loadMultiplication()">load</button><hr/>
+<div id="htmlOut"></div>
+
+<script type="text/javascript">
+function loadMultiplication(){
+	function getRandom(max){
+		return Math.floor(Math.random()*max + 1);
+	};
+
+	checkAnswers = function (){
+		var z =[];
+		for (var j = 0; j < numberOfSums; j++) {
+			z[j] = Number(document.getElementById("output"+j).value);
+		};
+		console.log(z);
+		for (var j = 0; j < numberOfSums; j++){
+			if (z[j] === answers[j]){
+				document.getElementById("check"+j).innerHTML = "<img src = 'images/Smile.jpg' alt = 'Right' style ='width:60px; height:40px;'>";
+			} else {
+				document.getElementById("check"+j).innerHTML = "<img src = 'images/Sad.jpg' alt = 'Wrong' style ='width:40px; height:40px;'>";
+			};
+		};
+	};
+
+	var numberOfSums = document.getElementById("numberOfSums").value;
+	var maxNumber = document.getElementById("maxNumber").value;
+	var x = 0, y = 0, m = 0;
+	var checkAnswersBtn = "<button id='checkAnswersBtn' type='button' onclick= 'checkAnswers()'> Check Answers</button>"
+	var answers = [] ;
+	var start = "", startx = "", starty = "", end = "", output = "", htmlOut = "", check = "";
+	var sign = " \xD7 "; // Hex value for multiplication sign.
+	var equal = " = ";
+	if(numberOfSums <21 && maxNumber < 100){
+		for (var i = 0; i < numberOfSums; i++) {
+			start = "<span class = 'operator'>"
+			startx = "<span class = 'inputx' id ='inputx";
+			starty = "<span class = 'inputy' id ='inputy";
+			end = " </span>";
+			output = "<input type ='number'  value = '' class ='output' id ='output"
+			check = "<span class = 'check' id = 'check";
+			x = getRandom(maxNumber);
+			y = getRandom(maxNumber);
+
+		    answers[i] = x*y;
+
+			htmlOut = htmlOut + startx + i + "'> " + x.toString() + end;
+			htmlOut = htmlOut + start + sign + end;
+			htmlOut = htmlOut + starty + i + "'> " + y.toString() + end;
+			htmlOut = htmlOut + start + equal + end + output + i + "'> " + check +i +"'> " + end  + "<hr/>";
+			console.log(x.toString() + " \xD7 " + y.toString()  + " = ");
+		};
+	} else {
+		alert("Please enter Number of Sums less than 21 and max number less than 21");
+	};
+	console.log(answers);
+	console.log(htmlOut);
+	document.getElementById("htmlOut").innerHTML = htmlOut + checkAnswersBtn;
+};
+	
+</script>
+</body>
+</html>
