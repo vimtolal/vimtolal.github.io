@@ -6,7 +6,11 @@
 			font-size: 18pt;
 			padding: 0
 		}
-		@
+		@media screen and (min-width: 480px) {
+			body {
+				font-size: 12pt;
+			}
+}
 		header {
 			color: rgba(25,123,234,1);
 			margin-top: 10px; 
@@ -231,6 +235,7 @@
 			vertical-align: middle;
 		}
 		#day-date {
+			font-size: 100%;
 			border: 4px ridge blue;
 			position: absolute;
 			top: 46.5%;
