@@ -1,13 +1,16 @@
-* {padding: 0; margin: 0; box-sizing: border-box;
+* {
+	padding: 0; margin: 0; box-sizing: border-box;
 	}
 	body {
+		width: 90%;
 		margin: 1% 5% 2% 5%;
 		padding: 2%;
 		font-family: arial;
 		border: 13px dashed blue;
 		border-radius: 40px;
 	}
-	h1 { display: inline-block;
+	h1 { 
+		display: inline-block;
 		font:33px san-serif;
 		color: rgba(223,134,223,1);
 	}
@@ -15,7 +18,8 @@
 		font-size: 40px;
 		font-family: arial;
 	}
-	h1 img { margin: 8px 10px 0px; ;
+	h1 img { 
+		margin: 8px 10px 0px;
 		width: 50px;
 		height: auto;
 	}
@@ -43,22 +47,26 @@
 		background-color: rgba(234,89,189,0.9);
 		box-shadow: 1px 1px 1px grey;
 	}
-	#addition { font-size: 45px;
+	#addition { 
+		font-size: 45px;
 		font-weight: bolder;
 		color: #F6E003;
 		text-shadow: 3px 3px 4px grey;
 	}
-	#subtraction { font-size: 45px;
+	#subtraction { 
+		font-size: 45px;
 		font-weight: bolder;
 		color: #00C2F3;
 		text-shadow: 3px 3px 4px grey;
 	}
-	#multiplication { font-size: 45px;
+	#multiplication { 
+		font-size: 45px;
 		font-weight: bolder;
 		color: #79AF00;
 		text-shadow: 3px 3px 4px grey;
 	}
-	#division { font-size: 45px;
+	#division { 
+		font-size: 45px;
 		font-weight: bolder;
 		color: #FF23A6;
 		text-shadow: 3px 3px 4px grey;
@@ -109,59 +117,74 @@
 		background-color:rgba(255,255,0,0.9); 
 	}
 
-	li {list-style-type:none;
+	li {
+		list-style-type: none;
 }
-a { text-decoration:none;
+a { 
+	text-decoration: none;
 }
-header { background-color:rgba(123,222,67,.9);
+header { 
+	background-color:rgba(123,222,67,.9);
 	color:rgba(255,255,233,1);      
-	font-size:40px;
+	font-size:34pt;
 	text-shadow:5px 5px 3px black,0px 0px 25px red;
 	width:98%;
 	padding:30px 0px;
-	margin-left:auto;
-	margin-right:auto;
+	margin-left: auto;
+	margin-right: auto;
 	margin-bottom:2px;
 	}
-	header:hover { background-color:rgba(18,123,99,0.8);
-               color:grey;    text-align:center;   font-size:20px;
-               text-shadow:2px 2px 3px black,0px 0px 30px red;
+	header: hover { 
+		background-color:rgba(18,123,99,0.8);
+		color:grey;    
+		text-align:center;   
+		font-size:20px;
+		text-shadow:2px 2px 3px black,0px 0px 30px red;
 }
 
-nav { background-color:rgba(89,213,189,0.9);
+nav { 
+	background-color:rgba(89,213,189,0.9);
       width:98%;
-      margin-left:auto;   margin-right:auto;
+      margin-left:auto;  
+      margin-right:auto;
 }
-ul { display:inline;
+ul {
+ display:inline;
 }
-li { display:inline-block;
+li { 
+	display:inline-block;
 }
-li a { display:block;
-       padding:20px;
-       width:100%;
-       background-color: rgba(239,239,0,0.8);
-       text-align:center;   font-weight:bold;
-       box-shadow:4px 4px 3px grey;
-       margin:3px 5px;
-       border: 1px solid transparent;
-       border-radius: 10px;
+li a { 
+	display:block;
+	padding:20px;
+	width:100%;
+	background-color: rgba(239,239,0,0.8);
+	text-align:center;   font-weight:bold;
+	box-shadow:4px 4px 3px grey;
+	margin:3px 5px;
+	border: 1px solid transparent;
+	border-radius: 10px;
 }
-li>a:hover { background-color:rgba(234,0,123,0.9);
-               color:white;
-               box-shadow:1px 1px 3px grey;
+li>a:hover { 
+	background-color:rgba(234,0,123,0.9);
+	color:white;
+	box-shadow:1px 1px 3px grey;
 }
-main { background-color:#b5d7ee;
-	width:78%;
+main { 
+	background: rgba(123,123,231,1) url(../images/mathMix.gif) no-repeat;
+	background-size: cover;
+	width:60%;
 	float:left;
 	margin-top:4px;
 	margin-left:1%;
 	margin-right:0.25%;
 	padding:5px 0px;
-	height:330px;
+	min-height:330px;
 }
-section, article { padding:10px;
-                   margin-bottom:5px;
-                   min-height:350px;
+section, article { 
+	padding:10px;
+	margin-bottom:5px;
+	min-height:350px;
 }
 .fixedImg img {
 	position: fixed;
@@ -172,50 +195,60 @@ section, article { padding:10px;
 	width: 105px;
 	height: auto;
 }
-div.img { margin: 5px;
-          border: 1px solid #ccc;
-          float: left;
-          width: 180px;
+div.img { 
+	margin: 5px;
+	border: 1px solid #ccc;
+	float: left;
+	width: 180px;
 }
-div.img:hover { border: 1px solid #777;
-                box-shadow:3px 3px 4px grey;
+div.img:hover { 
+	border: 1px solid #777;
+    box-shadow:3px 3px 4px grey;
 }
-div.img img { width: 100%;
+div.img img { 
+	width: 100%;
 }
-div.desc { padding: 15px;
+div.desc { 
+	padding: 15px;
 	text-align: center;
 }
-.im > img {
-	width: 80%;
-}
-aside { background-color:#b5ffff;
-	width:19.75%;
-    float:right;
-    margin-top:4px;
-    margin-right:1%;
-    padding:5px 0px;
-    height:330px;
+aside { 
+	background-color: #b5ffff;
+	width: 35%;
+    float: right;
+    margin-top: 4px;
+    margin-right: 1%;
+    padding: 5px 0px;
+    height: 330px;
 }
 aside div {
 	padding: 5px 15px;
 	color: rgba(255,167,23,0.9);
 	font-size: 16pt;
 	font-weight: bold;
-	text-shadow: 3px 3px 13px blue;
+	text-shadow: 3px 3px 19px blue;
 }
-button { background-color:;
-	padding:10px;
-	border-radius:15px;
+aside a:hover {
+	color: rgba(134,12,213,1);
+	font-size: 24pt;
 }
-footer { clear:right;
-	background-color:#567890;
-	color:white;
-	text-align:center;
-	font-size:16px;
-	text-shadow:4px 4px 3px black,0px 0px 19px red;
-	width:98%;
-	padding:20px 0px;
-	margin-left:auto;
-	margin-right:auto;
+button { 
+	padding: 10px;
+	border-radius: 15px;
+}
+#mybtn {
+	font-size: 23pt;
+}
+footer { 
+	clear: right;
+	background-color: #567890;
+	color: white;
+	text-align: center;
+	font-size: 16pt;
+	text-shadow: 4px 4px 3px grey, 0px 0px 16px blue;
+	width: 98%;
+	padding: 20px 0px;
+	margin-left: auto;
+	margin-right: auto;
 	margin-top:5px;
 }

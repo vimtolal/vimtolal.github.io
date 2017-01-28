@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Analog Clock</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="CSS/styleClock.css">
+</head>
+<body>
+	<header>
+		Analog Clock
+	</header>
+	<nav>
+		<a href="index.html" class ="back"> Back to Home </a><br/>
+	</nav>
+	<section id="clock-container">
+		<div id="clock">
+			<div id="num1" class="clock-num"><span class="number">1</span></div>
+			<div id="num2" class="clock-num"><span class="number">2</span></div>
+			<div id="num3" class="clock-num"><span class="number">3</span></div>
+			<div id="num4" class="clock-num"><span class="number">4</span></div>
+			<div id="num5" class="clock-num"><span class="number">5</span></div>
+			<div id="num6" class="clock-num"><span class="number">6</span></div>
+			<div id="num7" class="clock-num"><span class="number">7</span></div>
+			<div id="num8" class="clock-num"><span class="number">8</span></div>
+			<div id="num9" class="clock-num"><span class="number">9</span></div>
+			<div id="num10" class="clock-num"><span class="number">10</span></div>
+			<div id="num11" class="clock-num"><span class="number">11</span></div>
+			<div id="num12" class="clock-num"><span class="number">12</span></div>
+			<div id="hour-hand" class="clock-hands"><span></span></div>
+			<div id="min-hand" class="clock-hands"><span></span></div>
+			<div id="sec-hand" class="clock-hands"><span></span></div>
+			<div id="clock-center"><span>&#x26AB;</span></div>
+			<div id="day-date"></div>
+		</div>
+		
+	</section>
+	<hr/>
+	<section>
+	  <p>Digital Clock</p>
+	  <audio src="audio/cuckoo_clock_at_1_o_clock.ogg" id="clock-sound"></audio>
+	  <div id="digital-clock"></div>	
+	</section>
+	<aside>
+		
+	</aside>
+	<footer>
+		copy rights :Vimlesh Singh 2016 &copy; register &reg; <a href="https://vimleshsinghk.github.io/" target="_blank">www.vimlesh.co.uk</a>
+	</footer>
+<script type="text/javascript">
+(function(){
+	var myClock = setInterval(updateDateTime, 1000);
+	var hourHand = document.getElementById("hour-hand"),
+		minuteHand = document.getElementById("min-hand"),
+		secondHand = document.getElementById("sec-hand"),
+		digitalOut = document.getElementById("digital-clock"),
+		dayDateOut = document.getElementById("day-date"),
+		days = ["SUN","MON","TUE","WED","THU","FRI","SAT"],
+		clockSound = document.getElementById("clock-sound");
+		var count = 0;
+		function updateDateTime() {
+			var myTime = new Date();
+			digitalOut.innerHTML = myTime.toLocaleTimeString();
+			var hour = myTime.getHours(),
+	            min = myTime.getMinutes(),
+	            sec = myTime.getSeconds();
+	            dayDateOut.innerHTML = myTime.getDate() + "|" + days[myTime.getDay()];
+
+	            if(hour > 12){
+	            	hour = hour - 12;
+	            };
+	            var chimeSound = function() {
+	            	if(count >= hour) {
+	            		clearInterval(chime);
+	            		count = 0;
+	            	} else {
+	            		++count;
+	            		clockSound.play();
+	            	}	
+	            }
+	            if(min === 0 && sec === 0) {
+	            	var chime = setInterval(chimeSound,1000);
+	            }
+	            if(min === 30 && sec === 0) {
+	            	clockSound.play();
+	            }
+	            hourHand.style.transform = "rotate(" + (hour*30 + (min/2) - 90) +"deg)";
+	            minuteHand.style.transform = "rotate(" + (min*6 + (sec/10)- 90) + "deg)";
+	            secondHand.style.transform = "rotate(" + (sec*6 - 90) + "deg)";
+	        }
+	    })()
+
+</script>
+</body>
+</html>
