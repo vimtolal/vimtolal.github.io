@@ -6,6 +6,7 @@
 			font-size: 18pt;
 			padding: 0
 		}
+		@
 		header {
 			color: rgba(25,123,234,1);
 			margin-top: 10px; 
@@ -45,6 +46,7 @@
             -webkit-transform-origin: 100% 40%; /* Chrome, Safari, Opera */
             transform-origin: 50% 100%;
 			text-shadow: 2px 2px 4px grey;
+			font-size: 100%;
 		}
 		#num1 {
 			-ms-transform: rotate(300deg); /* IE 9 */
